@@ -1,10 +1,21 @@
+import Shop from "./pages/Shop/Shop";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginSignUp from "./pages/LoginSignUp/LoginSignUp";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
     <>
-      <h1 className="text-3xl font-bold text-[green]">
-      Hello world!
-    </h1>
+      <BrowserRouter>
+      <Routes>
+        {/* <Route path="/" element={<Home />}> */}
+          <Route path="/" element={<Home />} />
+          <Route path="loginsignup" element={<LoginSignUp />} />
+          <Route path="shop" element={<Shop />} />
+          {/* <Route path="*" element={<NoPage />} /> */}
+        {/* </Route> */}
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
