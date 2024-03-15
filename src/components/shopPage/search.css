@@ -1,0 +1,107 @@
+/* Main Content */
+
+.main-content{
+    width: 100%;
+    max-width: 64em; /* 1000px */
+}
+
+.search-bar{
+    margin:10px ;
+    height: 50px;
+    border-radius: 32px; ;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.search-bar h3{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.4px;
+    color: #444444;
+}
+
+.search-bar .input-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar .search-input-icon{
+    border: 1px solid #DDDDDD;
+    width: 253px;
+    height: 35px;
+    border-radius: 16px;
+    margin: 0 20px;
+    padding: 2px 10px;
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    color: #B7B7B7;
+    font-size: 20px;
+}
+.search-bar .search-input-icon input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 70%;
+    margin: 10px;
+    outline: none;
+    color: #B7B7B7;
+}
+.search-bar .sort-btn{
+    width: 35px;
+    margin: 4px;
+    height: 35px;
+    border: 1px solid #DDDDDD;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+#hide-icon{
+    display: none;
+}
+
+/* Resposiveness */
+
+@media screen and (max-width: 1080px) {
+    #hide-icon{
+        display: flex;
+    }
+    .container-shop .filter{
+        display: none;
+    }
+    .search-bar{
+        margin:2px ;
+    }
+    .search-bar{
+        margin:10px ;
+        height: 45px;;
+        padding: 0 10px;
+    }
+    .search-bar .search-input-icon{
+        border: 1px solid #DDDDDD;
+        width: 125.27px;
+        height: 25.52px;
+        margin: 0 4px;
+        padding: 1px 2px;
+        font-size: 18px;
+    }
+    .search-bar .search-input-icon input{
+        margin: 10px;
+        height: 22px;
+    }
+    .search-bar h3{
+        font-size: 12px;
+    }
+    .search-bar .sort-btn{
+        width: 25px;
+        margin: 4px;
+        height: 25px;
+        font-size: 14px;
+    }
+}

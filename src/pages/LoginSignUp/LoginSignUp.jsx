@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import { useHistory } from 'react-router-dom';
 import { motion } from "framer-motion"
 import './LoginSignUp.css'
 
@@ -19,6 +18,8 @@ const LoginSignUp = () =>{
     const [password,setPassword] = useState("");
     const [confirmPasssword,setConfirmPassword] = useState("");
     const [submitButtonDisable,setsubmitButtonDisable] = useState(false);
+    const [isLoggedIn,setIsLoggedIn] = useState(false);
+
     
     const signIn = ()=>{
         if(password==="" || email===""){
@@ -28,10 +29,11 @@ const LoginSignUp = () =>{
             signInWithEmailAndPassword(auth,email, password)
             .then((response) =>{
                 setsubmitButtonDisable(false) 
-                alert("Successfully  Logged In")
+                alert("Successfully  Logged In");
+                window.location.href = '/shop';
                 //TODO Rounting
                 // history.push('src/pages/Shop/Shop.jsx'); // Use history to navigate
-                window.location.href = '/shop';
+                
                 setEmail("")
                 setConfirmPassword("")
                 setName("")
@@ -91,6 +93,7 @@ const LoginSignUp = () =>{
         
             localStorage.setItem("email",data.user.email);
             alert("Google  Account Connected Successfully!");
+            window.location.href = '/shop';
         })
         .catch((err) =>{
             alert(err.message);
@@ -99,81 +102,83 @@ const LoginSignUp = () =>{
     }
     return (
     <> 
-    <motion.div className='logo'
-        initial={{opacity:0, scale:0.5}} 
-        animate={{opacity:1, scale:1}}
-        transition={{
-            ease: "linear",
-            duration: 0.35,
-            x: { duration: 0.5 }
-        }}>
-        <img src={company_logo} alt="Logo"/>
-    </motion.div>
-    <motion.div className="conatiner"
+    <div className='sign-in-container'>
+        <motion.div className='logo'
             initial={{opacity:0, scale:0.5}} 
             animate={{opacity:1, scale:1}}
             transition={{
-                type:"spring",
-                stiffness:100,
-                delay:0.5,
-    }}>
-        <div className="inputs">
-            <div className="toggle-switch" >
-                <div className="toggle" >
-                    <div className={action === "Sign Up" ? "Login-signUp gray" : "Login-signUp" } onClick={() => {
-                        setAction("Login")
-                        setEmail("")
-                        setConfirmPassword("")
-                        setName("")
-                        setPassword("")
-                        }}>Login
-                    </div>
-                    <div className={action === "Login" ? "Login-signUp gray" : "Login-signUp" } onClick={() => {
-                        setAction("Sign Up")
-                        setEmail("")
-                        setConfirmPassword("")
-                        setName("")
-                        setPassword("")
-                        }}>Sign Up
+                ease: "linear",
+                duration: 0.35,
+                x: { duration: 0.5 }
+            }}>
+            <img src={company_logo} alt="Logo"/>
+        </motion.div>
+        <motion.div className="conatiner"
+                initial={{opacity:0, scale:0.5}} 
+                animate={{opacity:1, scale:1}}
+                transition={{
+                    type:"spring",
+                    stiffness:100,
+                    delay:0.5,
+        }}>
+            <div className="inputs">
+                <div className="toggle-switch" >
+                    <div className="toggle" >
+                        <div className={action === "Sign Up" ? "Login-signUp gray" : "Login-signUp" } onClick={() => {
+                            setAction("Login")
+                            setEmail("")
+                            setConfirmPassword("")
+                            setName("")
+                            setPassword("")
+                            }}>Login
                         </div>
+                        <div className={action === "Login" ? "Login-signUp gray" : "Login-signUp" } onClick={() => {
+                            setAction("Sign Up")
+                            setEmail("")
+                            setConfirmPassword("")
+                            setName("")
+                            setPassword("")
+                            }}>Sign Up
+                            </div>
+                    </div>
                 </div>
+                <div className="form">
+
+                    {action === "Login" ? <div></div> : <><p>Name</p>
+                    <div className="input">
+                        <input type="text" placeholder="Enter your Name" value={name} onChange={(e) => setName(e.target.value)}/>
+                    </div></>}
+
+                    <p>Email</p>
+                    <div className="input">
+                        <input type="email" placeholder="Enter your Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    </div>
+                    <p>Password</p>
+                    <div className="input">
+                        <input type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    </div>
+                    {action === "Login" ? <div></div> : <> <p>Confirm Password</p>
+                    <div className="input">
+                        <input type="password" placeholder="Confirm Password" value={confirmPasssword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+                    </div></>}
+
+                </div>
+
+            <div className="submit-container">
+                <button className="submit"
+                    onClick={action === "Login" ? signIn : signUp }
+                    disabled={submitButtonDisable}>
+                        {action}
+                </button>
+                <button className= "googlebtn" onClick={handleClick}> 
+                    <img src={google_logo} alt="google"/>
+                    <p>Continue with <br /> <span>Google</span> </p>
+                </button>
+
             </div>
-            <div className="form">
-
-                {action === "Login" ? <div></div> : <><p>Name</p>
-                <div className="input">
-                    <input type="text" placeholder="Enter your Name" value={name} onChange={(e) => setName(e.target.value)}/>
-                </div></>}
-
-                <p>Email</p>
-                <div className="input">
-                    <input type="email" placeholder="Enter your Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                </div>
-                <p>Password</p>
-                <div className="input">
-                    <input type="password" placeholder="Enter your password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                </div>
-                {action === "Login" ? <div></div> : <> <p>Confirm Password</p>
-                <div className="input">
-                    <input type="password" placeholder="Confirm Password" value={confirmPasssword} onChange={(e) => setConfirmPassword(e.target.value)}/>
-                </div></>}
-
             </div>
-
-        <div className="submit-container">
-            <button className="submit"
-                 onClick={action === "Login" ? signIn : signUp }
-                 disabled={submitButtonDisable}>
-                    {action}
-            </button>
-            <button className= "googlebtn" onClick={handleClick}> 
-                <img src={google_logo} alt="google"/>
-                <p>Continue with <br /> <span>Google</span> </p>
-            </button>
-
-        </div>
-        </div>
-    </motion.div>
+        </motion.div>    
+    </div>
     </>
     )
 }

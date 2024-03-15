@@ -1,3 +1,15 @@
+.item-preview-bg{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.348);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .item_preview{
     width: 80vw;
 

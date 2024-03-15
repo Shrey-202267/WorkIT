@@ -127,7 +127,7 @@
 
 @media screen and (max-width:560px) and (min-width:360px){
     .nav_bar{
-        width: 100vw;
+        width: 100%;
     }
     .nav_bar .controls{
         width: 20%;

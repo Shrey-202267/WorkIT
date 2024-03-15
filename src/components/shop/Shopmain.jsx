@@ -3,12 +3,10 @@ import Filter from './Filter';
 import "./shop.css"
 import Search from './Search';
 import Card from './Card';
-import NavBar from '../navbar/NavBar';
 
 
-const Shop = () => {
+const Shopmain = () => {
   return (<>
-    <NavBar/>
     <div className='container-shop'>
         <div  className="filter">
             <Filter/>
@@ -22,4 +20,4 @@ const Shop = () => {
   )
 }
 
-export default Shop;
+export default Shopmain;

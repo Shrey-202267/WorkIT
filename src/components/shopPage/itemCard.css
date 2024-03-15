@@ -1,15 +1,10 @@
 .item_card{
-    width: 300px;
-
+    width: 18.75rem;
     margin: 20px 10px;
-
     padding: 20px;
-    
     border: 1px solid #dddddd;
     border-radius: 5px;
-
     box-shadow: rgba(47, 47, 47, 0.155) 0px 3px 8px;
-    
     transition: 200ms;
 }
 .item_card:hover{
@@ -26,7 +21,7 @@
 }
 .item_card .image img{
     margin: auto auto;
-    width: 280px;
+    width: 17.5rem;
 }
 
 .item_card .item_name{
