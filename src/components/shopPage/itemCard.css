@@ -1,0 +1,91 @@
+.item_card{
+    width: 18.75rem;
+    margin: 20px 10px;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: rgba(47, 47, 47, 0.155) 0px 3px 8px;
+    transition: 200ms;
+}
+.item_card:hover{
+    transform: scale(1.02);
+    box-shadow: rgba(1, 99, 174, 0.502) 0px 3px 8px;
+}
+
+.item_card .image{
+    width: 90%;
+
+    margin: auto auto;
+
+    border-bottom: 1px solid #dddddd;
+}
+.item_card .image img{
+    margin: auto auto;
+    width: 17.5rem;
+}
+
+.item_card .item_name{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 10px;
+}
+.item_card .item_name img{
+    width: 30px;
+}
+.item_card .item_name span{
+    margin-left: 10px;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #444444;
+}
+
+.item_card .details{
+    margin-top: 10px;
+    line-height: 18px;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #444444;
+
+}
+
+.item_card .interactions{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.item_card .interactions button{
+    width: 45%;
+    height: 30px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 200ms;
+}
+.item_card .interactions button:hover{
+    transform: scale(1.05);
+    box-shadow: rgba(47, 47, 47, 0.155) 0px 3px 8px;
+    
+}
+.item_card .interactions .view_btn{
+    color: #444444;
+}
+.item_card .interactions .add_btn{
+    color: #1159A8;
+}
+.item_card .interactions .add_btn:hover{
+    /* background-color: #1159A8; */
+
+    /* color: white; */
+    border-color: #1159A8;
+}

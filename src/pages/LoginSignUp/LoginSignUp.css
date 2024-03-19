@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.sign-in-container{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.sign-in-container .logo{
+    display: flex;
+    align-items: center; 
+    margin: auto;
+    margin-top: 1.25rem;
+    width: 9.375rem;
+    height: 5.625rem;
+} 
+.sign-in-container .logo img{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.sign-in-container .conatiner{
+    padding:1.875rem 3.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: #444444;
+    width: 37.5rem; 
+    background:white;
+    border-radius: 2rem; 
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.sign-in-container .inputs{
+    display: flex;
+    flex-direction: column;
+}
+.sign-in-container .toggle-switch{
+    background: #F1F1F1;
+    box-shadow: 2px 4px 8.300000190734863px 0px #00000040 inset;
+    width: 32.25rem;
+    height: 4rem;
+    padding: 0.188rem; 
+    border-radius: 3.125rem;
+    margin:auto;
+    border: 1px;
+}
+.sign-in-container .toggle{
+    display: flex;
+    flex-direction: row;
+    gap: 0.9rem;
+    cursor: pointer;
+}
+.sign-in-container .Login-signUp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size:1.25rem;
+    background: #00A2D3;
+    width: 100%;
+    height: 3.75rem;
+    border-radius: 2rem;
+}
+.sign-in-container .form p {
+    font-size: 1.25rem; 
+    /* color: black; */
+    margin: 1.25rem 0.625rem;
+    position: relative;
+    align-self: flex-start;
+    left: 0.625rem;
+}
+.sign-in-container .form{
+    display: flex;
+    align-items: center;
+    margin: 1.875rem auto;
+    flex-direction: column;
+    width: 25rem;
+}
+.sign-in-container .input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    height: 3.25rem;
+    border-radius: 1.625rem;
+    border: 1px;
+    background: #eaeaea;
+}
+.sign-in-container .input input{
+    width: 100%;
+    height: 2.5em;
+    border: none;
+    background: transparent;
+    font-size: 19px;
+    color: #797979; 
+    /* outline: none; */
+    padding: 1.25rem; 
+}
+ .sign-in-container input:focus{
+   outline-color: lightgray;
+   border-radius: 1.625rem;
+}
+.sign-in-container .submit-container{
+    display: flex;
+    flex-direction: row;
+    gap: 0.9rem;
+    margin-top: 1.875rem;
+}
+.sign-in-container .submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.25rem;
+    background: #1159A8;
+    width: 17.625rem;
+    height:4rem;
+    border-radius: 2rem;
+    border: 1px solid;
+    cursor: pointer;
+
+}
+.sign-in-container .submit:disabled{
+    background: grey !important;
+}
+.sign-in-container .googlebtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:1.25rem;
+    background: #ffffff;
+    color: rgb(169, 167, 167);
+    width: 17.625rem;
+    height:4rem;
+    border-radius: 2rem;
+    border: 1px solid;
+    cursor: pointer;
+}
+.sign-in-container .googlebtn p{
+    font-size: 0.938rem;
+}
+.sign-in-container span{
+    font-size: 1.625rem;
+    padding: 0.813rem;
+}
+.sign-in-container .submit-container img{
+    padding: 0.625rem;
+}
+.sign-in-container .gray{
+    background: #F1F1F1;
+    color: #444444;
+}
