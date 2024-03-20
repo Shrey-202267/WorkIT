@@ -143,6 +143,9 @@
         border: none;
         position: absolute;
         left: 10px;
+        top: 0px;
+        display: flex;
+        align-items: center;
     }
     .nav_bar .controls .cart span{
         visibility: hidden;

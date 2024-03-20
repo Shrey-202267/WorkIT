@@ -6,8 +6,10 @@ import Search from "../../components/shopPage/search";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import "./shop.css";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { getFirestore, getDocs, collection } from "firebase/firestore"
+import { app } from "../../database/firebaseConfig";
 
 
 // const navigate = useNavigate()
@@ -26,24 +28,49 @@ import { useNavigate } from 'react-router-dom'
 //     });
 //  }, [navigate]);
 
+const db = getFirestore(app);
+
 const Shop = ()=>{
-    return (
-        <div className="shop_page">
-            <NavBar/>
-            <div className="shop_container">
-                <div className="filter_container">
-                    <Filter/>
+
+    const [items,setItems] = useState(null);
+
+    useEffect(()=>{
+        getItems();
+    },[])
+
+    const getItems = async ()=>{
+        const docRef = collection(db,"features");
+
+        const docSnap = await getDocs(docRef);
+        console.log("got the items", docSnap.docs);
+        setItems(docSnap.docs);
+        // console.log("items set", items);
+       
+    }
+    console.log("items set", items);
+
+    if(items){
+        return (
+            <div className="shop_page">
+                <NavBar/>
+                <div className="shop_container">
+                    <div className="filter_container">
+                        <Filter/>
+                    </div>
+                    <div className="shop_content">
+                        <Search/>
+                        <ItemCard items={items}/>
+                        {/* <div className="cart-container"><Cart/></div> */}
+                    </div>
                 </div>
-                <div className="shop_content">
-                    <Search/>
-                    <ItemCard/>
-                    {/* <div className="cart-container"><Cart/></div> */}
-                </div>
+
             </div>
-            
-        </div>
-        
-    )
+
+        )
+    }else{
+        return <h1>Fetching...</h1>
+    }
+    
 }
 
 export default Shop;

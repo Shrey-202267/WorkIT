@@ -1,10 +1,12 @@
 import "./navBar.css";
 // images and icons
+
 import logo from "../../assets/images/logo.png";
 import expert_icon from "../../assets/images/expert.png";
 import cart_icon from "../../assets/icons/cart.svg";
 import profile_icon from "../../assets/icons/profile.svg";
 import logout_icon from "../../assets/icons/logout.svg";
+
 import { Link } from "react-router-dom";
 import {  signOut } from "firebase/auth";
 import { auth } from "../../database/firebaseConfig";
@@ -21,7 +23,7 @@ const NavBar =()=>{
     const handleLogout = () => {               
         signOut(auth).then(() => {
         // Sign-out successful.
-            navigate("/");
+            window.location.href="/"
             console.log("Signed out successfully")
         }).catch((error) => {
         // An error happened.
@@ -49,7 +51,7 @@ const NavBar =()=>{
                     <img src={profile_icon} alt="" />
                     <div className="user_options">
                         <span><img src={profile_icon} alt="" />{userInstance.user?.displayName}</span>
-                        <span><img src={logout_icon} alt="" onClick={handleLogout} />Logout</span>
+                        <span onClick={handleLogout}><img src={logout_icon} alt=""  />Logout</span>
                         {/* the content will change according to the logged in user */}
                     </div>
                 </div>
